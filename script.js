@@ -145,7 +145,7 @@ window.addEventListener("scroll", () => {
    LOCAL PROJECT / ACTIVITY COUNT
 ========================================================= */
 const projectCount = document.querySelector("#projectCount");
-if (projectCount) projectCount.textContent = "2 Activities";
+if (projectCount) projectCount.textContent = "3 Activities";
 
 /* =========================================================
    HIDE BIOGRAPHY TOGGLE
