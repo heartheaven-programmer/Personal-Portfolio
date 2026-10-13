@@ -1,0 +1,27 @@
+Header 
+- student portal
+- welcome message
+
+content
+-student info
+-name
+-section
+-year
+
+3 button
+btn1
+mousedown
+mouse up
+
+btn2
+hide profile
+
+btn3
+show profile
+
+below
+message (show changes that happen)
+
+dropdown(select)(must change the section automatically)
+
+table
