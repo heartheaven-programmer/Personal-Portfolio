@@ -1,0 +1,73 @@
+$(document).ready(function(){
+    $("#title").text("Good Morning!")
+
+    $("p").css("color","white")
+
+    $("h1").css("color","rgb(92, 79, 207)")
+
+    //$("*").css("background", "light green")
+
+    //$(".btn1").click(function(){
+    //    $(this).css("background", "purple")
+
+   // })
+
+    $("[href]").css("color","blue")
+
+    $("ul li:first-child").css("color", "Purple")
+
+    $("th").css("background","rgb(211, 132, 211)")
+
+    $("tr:even").css("background","lightblue")
+
+    $("tr:odd").css("background","lightgreen")
+
+    $("#btnclick").click(function(){
+        $("#message").text("You Clicked the Button!")
+    })
+
+    $("#btnclick").dblclick(function(){
+        $("#message").text("You Double Clicked the Button!")
+    })
+})
+
+    $("#btnclick").mouseover(function(){
+        $("#message").text("Your mouse reached the button!")
+    })
+
+    $("#btnclick").mouseleave(function(){
+        $("#message").text("Your mouse leave the button!")
+    })
+
+    $("#btnclick").mousedown(function(){
+        $(this).css("background", "blue")
+    })
+
+    $("#btnclick").mouseup(function(){
+        $(this).css("background", "rgb(189, 36, 87)")
+    })
+    
+    $("#name").focus(function(){
+        $("#message").text("You select the text box!")
+        $(this).css("background", "rgb(218, 169, 185)")
+    })
+
+    $("#name").blur(function(){
+        $("#message").text("You leave the text box!")
+        $(this).css("background", "rgb(250, 245, 246)")
+    })
+
+    $("#course").change(function(){
+        $("#message").text($(this).val())
+    })
+
+    $(".btn1").click(function(){
+        $("#table").hide("slow")
+
+    })
+
+    $(".btn1").dblclick(function(){
+        $("#table").show(2000)
+
+    })
+
