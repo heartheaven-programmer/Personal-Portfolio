@@ -1,0 +1,142 @@
+:root{
+    --ft-gold: #ffd700;
+    --ft-red: #d32f2f;
+    --dark-bg: #1a1a1a;
+    --card-bg: rgba(40, 40, 40, 0.65);
+    --white: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    background-color: var(--dark-bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,h2,h3{
+    font-family: 'Cinzel' , serif;
+    margin-bottom: 1rem;
+}
+
+section{
+    padding: 80px 10%;
+    position: relative;
+    z-index: 2;
+}
+
+img{
+    max-width: 100%;
+}
+
+.bg-logo ::before{
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  height: 600px;
+  background-image: url('fairytail-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  filter: blur(35px) brightness(0.3);
+  opacity: 0.12;
+  z-index: 1;
+}
+
+header{
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+}
+
+.logo-nav{
+    height: 50px;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a::hover{
+    color: var(--ft-gold);
+    transform: scale(1.1);
+}
+
+.btn-primary{
+    padding: 14px 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: var(--ft-gold);
+    color: var(--dark-bg);
+    transition: all0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn-primary:hover{
+    background: #ffea00;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(2555, 215, 0, 0.5) ;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40%;
+    min-height: 90vh;
+    text-align: left;
+}
+
+.logo-main{
+    width: 350px;
+}
+
+.guild-mark{
+    width: 250px;
+    filter: drop-shadow(0 0 15px var(--ft-gold));
+    transition: transform 0.4s ease;
+}
+
+.guild-mark:hover{
+    transform: rotate(10deg) scale(1.1);
+}
+
+.hero h2{
+    font-size: 2.5rem;
+    color: var(--ft-gold);
+}
+
+.guild{
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.section-subtitle{
+    margin-bottom: 40px;
+    color: #ccc;
+}
