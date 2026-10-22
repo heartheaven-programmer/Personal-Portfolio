@@ -1,0 +1,21 @@
+*{
+   margin:0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+.header{
+    height: 80px;
+    text-align: center;
+    background-color: rgb(250, 145, 231);
+    padding: 10px;
+}
+
+.link{
+    text-align: center;
+    background-color: rgb(241, 87, 182);
+    display: flex;
+    justify-content: center;
+    gap: 10px
+}
+

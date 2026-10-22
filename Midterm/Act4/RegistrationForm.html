@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+<div>
+    <header style="background-color: rgb(250, 145, 231); text-align:center; padding: 10px">
+        <h1>Registration Form</h1>
+        <p>This is my Website Form</p>
+    </header>
+    <nav style="background-color: rgb(241, 87, 182); text-align: center; display:flex; justify-content:center; gap: 150px">
+        <a href="Home.html">Home</a>
+        <a href="RegistrationForm.html">Registration Form</a>
+        <a href="Tables.html">Grade Table</a>
+        <a href="MyProfile.html">My Profile</a>
+    </nav>
+
+    <form>
+        <h5>Student Name:</h5>
+        <textarea rows="1" col="30" name="studname" placeholder="Enter Student Name here..."></textarea>
+    </form>
+
+    <form>
+        <h5>Student Number:</h5>
+        <textarea rows="1" col="30" name="studnum" placeholder="Enter Student Number here..."></textarea>
+    </form>
+
+    <form>
+        <h5>Email:</h5>
+        <textarea rows="1" col="30" name="email" placeholder="Enter email here..."></textarea>
+    </form>
+
+    <form>
+        <h5>Gender</h5>
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="male">Male
+    </form>
+
+    <form>
+        <h5>Course</h5>
+        <select name="dropdown">
+            <option value="bscs">BSCS</option>
+            <option value="bshm">BSHM</option>
+        </select>
+    </form>
+
+     <form>
+        <h5>Skills</h5>
+        <input type="radio" name="lang" value="html">HTML
+        <input type="radio" name="lang" value="css">CSS
+        <input type="radio" name="lang" value="javascript">JavaScript
+    </form>
+
+    <form>
+        <h5>Upload Picture</h5>
+        <input type="file" name="fileupload" accept="/*"/>
+    </form>
+
+    <form>
+        <h5>Address</h5>
+        <textarea rows="5" cols="50" name="address" placeholder=""></textarea>
+    </form>
+
+    <form>
+        <input type="submit" name="submit" value="Submit" />
+        <input type="reset" name="reset" value="Reset" />
+    </form>
+
+</div>
+    
+</body>
+</html>
