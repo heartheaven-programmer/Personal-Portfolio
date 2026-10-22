@@ -494,7 +494,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "MY Mai TONIGHT",
             artist: "Aqours",
-            src: "/Music/Aqours MY Mai TONIGHT MY 舞 TONIGHT lit MY Dance TONIGHT Color Coded Kanji Romaji Eng.mp3",
+            src: "Aqours MY Mai TONIGHT MY 舞 TONIGHT lit MY Dance TONIGHT Color Coded Kanji Romaji Eng.mp3",
             cover: "/Music/aquor.jpg"
         },
         {
