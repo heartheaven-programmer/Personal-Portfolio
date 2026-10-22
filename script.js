@@ -104,6 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (year) year.textContent = new Date().getFullYear();
 
     /* =========================================================
+       LOCAL PROJECT / ACTIVITY COUNT
+    ========================================================= */
+    const projectCount = document.querySelector("#projectCount");
+    if (projectCount) projectCount.textContent = "7 Activities";
+
+    /* =========================================================
        PROFILE IMAGE TOGGLE
     ========================================================= */
     const changeImgBtn = document.getElementById('changeImgBtn');
@@ -112,12 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (changeImgBtn && profileImg) {
         changeImgBtn.addEventListener('click', () => {
-            // Fade out
             profileImg.style.opacity = '0';
             
             setTimeout(() => {
                 if (isOriginalImg) {
-                    // Replace 'my-image.jpg' with the path to your actual image
                     profileImg.src = 'my-image.jpg'; 
                 } else {
                     profileImg.src = 'cat.webp';
@@ -148,10 +152,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const readMoreBtn = document.getElementById('readMoreBtn');
-    const reflectionText = document.querySelector('.reflection-text');
+    // Target specifically the Finals reflection text for the read more button
+    const finalsReflectionText = document.querySelector('#finals-reflection .reflection-text');
 
-    if (readMoreBtn && reflectionText) {
-        const reflectionParagraphs = reflectionText.querySelectorAll('p');
+    if (readMoreBtn && finalsReflectionText) {
+        const reflectionParagraphs = finalsReflectionText.querySelectorAll('p');
         
         if (reflectionParagraphs.length > 2) {
             reflectionParagraphs[1].style.display = 'none';
@@ -208,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =========================================================
        PROJECTS FILTER & CAROUSEL
     ========================================================= */
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
     const projectCards = document.querySelectorAll('.project-card');
     const projectsGrid = document.getElementById('projectsGrid');
     const scrollLeftBtn = document.getElementById('scrollLeftBtn');
@@ -247,6 +252,35 @@ document.addEventListener("DOMContentLoaded", () => {
             projectsGrid.scrollBy({ left: 350, behavior: 'smooth' });
         });
     }
+
+    /* =========================================================
+       REFLECTION FILTERS
+    ========================================================= */
+    const reflectionFilters = document.querySelectorAll('#reflectionFilters .filter-btn');
+    const midtermReflection = document.getElementById('midterm-reflection');
+    const finalsReflection = document.getElementById('finals-reflection');
+
+    reflectionFilters.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button state
+            reflectionFilters.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const target = btn.getAttribute('data-target');
+
+            // Toggle visibility based on selection
+            if (target === 'all') {
+                midtermReflection.classList.add('show');
+                finalsReflection.classList.add('show');
+            } else if (target === 'midterm') {
+                midtermReflection.classList.add('show');
+                finalsReflection.classList.remove('show');
+            } else if (target === 'finals') {
+                midtermReflection.classList.remove('show');
+                finalsReflection.classList.add('show');
+            }
+        });
+    });
 
     /* =========================================================
        ANIMATED QUOTES
@@ -296,22 +330,14 @@ document.addEventListener("DOMContentLoaded", () => {
             flagsCountDisplay.textContent = flags;
             minesCountDisplay.textContent = totalMines;
 
-            // Create empty board logic
             for (let r = 0; r < rows; r++) {
                 let row = [];
                 for (let c = 0; c < cols; c++) {
-                    row.push({
-                        isMine: false,
-                        isRevealed: false,
-                        isFlagged: false,
-                        count: 0,
-                        element: null
-                    });
+                    row.push({ isMine: false, isRevealed: false, isFlagged: false, count: 0, element: null });
                 }
                 board.push(row);
             }
 
-            // Place mines randomly
             let minesPlaced = 0;
             while (minesPlaced < totalMines) {
                 const r = Math.floor(Math.random() * rows);
@@ -322,7 +348,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // Calculate numbers
             for (let r = 0; r < rows; r++) {
                 for (let c = 0; c < cols; c++) {
                     if (!board[r][c].isMine) {
@@ -331,9 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             for (let j = -1; j <= 1; j++) {
                                 const nr = r + i;
                                 const nc = c + j;
-                                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && board[nr][nc].isMine) {
-                                    count++;
-                                }
+                                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && board[nr][nc].isMine) count++;
                             }
                         }
                         board[r][c].count = count;
@@ -341,7 +364,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // Render board to DOM
             for (let r = 0; r < rows; r++) {
                 for (let c = 0; c < cols; c++) {
                     const cell = document.createElement('div');
@@ -365,7 +387,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (gameOver || board[r][c].isRevealed || board[r][c].isFlagged) return;
 
             if (board[r][c].isMine) {
-                // Game Over
                 revealAllMines();
                 gameMessage.textContent = "Boom! Game Over 💥";
                 gameMessage.style.color = "#ff4d6d";
@@ -407,7 +428,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 cellData.element.textContent = cellData.count;
                 cellData.element.dataset.count = cellData.count;
             } else {
-                // Recursively reveal adjacent cells if empty
                 for (let i = -1; i <= 1; i++) {
                     for (let j = -1; j <= 1; j++) {
                         revealCell(r + i, c + j);
@@ -442,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         resetGameBtn.addEventListener('click', initGame);
-        initGame(); // Start game on load
+        initGame();
     }
 
     /* =========================================================
@@ -464,74 +484,72 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentTimeEl = document.getElementById('currentTime');
     const totalTimeEl = document.getElementById('totalTime');
 
-    // Sample tracks (Use public domain/free audio URLs for testing)
-       // Sample tracks (Use public domain/free audio URLs for testing)
     const tracks = [
         {
             title: "Above All",
             artist: "Natasha Midori",
-            src: "./Music/Above All Natashia Midori Official lyric video.mp3", // Or use the original filename if you didn't rename it
-            cover: "Music/above all.webp"
+            src: "./Music/Above All Natashia Midori Official lyric video.mp3",
+            cover: "./Music/above all.webp"
         },
         {
             title: "MY Mai TONIGHT",
             artist: "Aqours",
             src: "./Music/Aqours MY Mai TONIGHT MY 舞 TONIGHT lit MY Dance TONIGHT Color Coded Kanji Romaji Eng.mp3",
-            cover: "Music/aquor.jpg"
+            cover: "./Music/aquor.jpg"
         },
         {
             title: "FIRE BIRD",
             artist: "Roselia (Bang Dream)",
             src: "./Music/BanG Dream FILM LIVE Roselia ー FIRE BIRD.mp3",
-            cover: "Music/roselia.jpg"
+            cover: "./Music/roselia.jpg"
         },
         {
             title: "Beautiful Saviour",
             artist: "Natasha Midori",
             src: "./Music/Beautiful Saviour Natashia Midori Official lyric video.mp3",
-            cover: "Music/beautiful saviour.jpg"
+            cover: "./Music/beautiful saviour.jpg"
         },
         {
             title: "Broken Vessels",
             artist: "Natasha Midori",
             src: "./Music/Broken Vessels Natashia Midori Official lyric video.mp3",
-            cover: "Music/broken vessel.webp"
+            cover: "./Music/broken vessel.webp"
         },
         {
             title: "Hoshi no Uta",
             artist: "Fairy Tail",
             src: "./Music/Fairy Tail Hoshiboshi No Uta Lyra s Song lyrics english sub.mp3",
-            cover: "Music/hoshi no uta.jpg"
+            cover: "./Music/hoshi no uta.jpg"
         },
         {
             title: "Heart of Worship",
             artist: "Natasha Midori",
             src: "./Music/Heart of Worship Natashia Midori Official lyric video.mp3",
-            cover: "Music/heart of worship.jpg"
+            cover: "./Music/heart of worship.jpg"
         },
         {
             title: "I Need You More",
             artist: "Natasha Midori",
             src: "./Music/I Need You More Natashia Midori Official lyric video.mp3",
-            cover: "Music/i need you more.jpg"
+            cover: "./Music/i need you more.jpg"
         },
         {
             title: "Worthy Is The Lamb",
             artist: "Natasha Midori",
             src: "./Music/Worthy Is The Lamb Natashia Midori Official lyric video.mp3",
-            cover: "Music/worthy is the lamb.jpg"
+            cover: "./Music/worthy is the lamb.jpg"
         },
         {
             title: "Mori no Chiisana Restaurant",
             artist: "Aoi Teshima",
             src: "./Music/手嶌葵 森の小さなレストラン Official Audio.mp3",
-            cover: "Music/mori choiisina restaurant.webp"
+            cover: "./Music/mori choiisina restaurant.webp"
         },
         {
             title: "Baby you",
             artist: "Yuka",
             src: "./Music/有華 Baby you Music Video Yuka Ver.mp3",
-            cover: "Music/baby you.jpg"
+            cover: "./Music/baby you.jpg"
         }
     ];
 
@@ -545,7 +563,6 @@ document.addEventListener("DOMContentLoaded", () => {
         currentArtist.textContent = track.artist;
         currentCover.src = track.cover;
         
-        // Update playlist active state
         document.querySelectorAll('#playlist li').forEach((li, i) => {
             li.classList.toggle('active', i === index);
         });
@@ -581,7 +598,6 @@ document.addEventListener("DOMContentLoaded", () => {
         playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
     }
 
-    // UI Toggles
     musicFab?.addEventListener('click', () => {
         musicPlayer.classList.toggle('show');
         if (musicPlayer.classList.contains('show') && !audioPlayer.src) {
@@ -593,7 +609,6 @@ document.addEventListener("DOMContentLoaded", () => {
         musicPlayer.classList.remove('show');
     });
 
-    // Controls
     playPauseBtn?.addEventListener('click', () => {
         if (isPlaying) pauseAudio();
         else playAudio();
@@ -611,7 +626,6 @@ document.addEventListener("DOMContentLoaded", () => {
         playAudio();
     });
 
-    // Progress bar
     audioPlayer?.addEventListener('timeupdate', () => {
         const current = audioPlayer.currentTime;
         const duration = audioPlayer.duration;
@@ -620,7 +634,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const progressPercent = (current / duration) * 100;
             musicProgress.value = progressPercent;
             
-            // Format time
             const formatTime = (time) => {
                 if (isNaN(time)) return "0:00";
                 const mins = Math.floor(time / 60);
@@ -644,7 +657,6 @@ document.addEventListener("DOMContentLoaded", () => {
         nextTrackBtn.click();
     });
 
-    // Initialize playlist
     if (playlistEl) {
         renderPlaylist();
     }
