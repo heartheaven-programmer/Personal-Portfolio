@@ -488,68 +488,68 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Above All",
             artist: "Natasha Midori",
-            src: "./Music/Above All Natashia Midori Official lyric video.mp3",
-            cover: "./Music/above all.webp"
+            src: "/Music/Above All Natashia Midori Official lyric video.mp3",
+            cover: "/Music/above all.webp"
         },
         {
             title: "MY Mai TONIGHT",
             artist: "Aqours",
-            src: "./Music/Aqours MY Mai TONIGHT MY 舞 TONIGHT lit MY Dance TONIGHT Color Coded Kanji Romaji Eng.mp3",
-            cover: "./Music/aquor.jpg"
+            src: "/Music/Aqours MY Mai TONIGHT MY 舞 TONIGHT lit MY Dance TONIGHT Color Coded Kanji Romaji Eng.mp3",
+            cover: "/Music/aquor.jpg"
         },
         {
             title: "FIRE BIRD",
             artist: "Roselia (Bang Dream)",
-            src: "./Music/BanG Dream FILM LIVE Roselia ー FIRE BIRD.mp3",
-            cover: "./Music/roselia.jpg"
+            src: "/Music/BanG Dream FILM LIVE Roselia ー FIRE BIRD.mp3",
+            cover: "/Music/roselia.jpg"
         },
         {
             title: "Beautiful Saviour",
             artist: "Natasha Midori",
-            src: "./Music/Beautiful Saviour Natashia Midori Official lyric video.mp3",
-            cover: "./Music/beautiful saviour.jpg"
+            src: "/Music/Beautiful Saviour Natashia Midori Official lyric video.mp3",
+            cover: "/Music/beautiful saviour.jpg"
         },
         {
             title: "Broken Vessels",
             artist: "Natasha Midori",
-            src: "./Music/Broken Vessels Natashia Midori Official lyric video.mp3",
-            cover: "./Music/broken vessel.webp"
+            src: "/Music/Broken Vessels Natashia Midori Official lyric video.mp3",
+            cover: "/Music/broken vessel.webp"
         },
         {
             title: "Hoshi no Uta",
             artist: "Fairy Tail",
-            src: "./Music/Fairy Tail Hoshiboshi No Uta Lyra s Song lyrics english sub.mp3",
-            cover: "./Music/hoshi no uta.jpg"
+            src: "/Music/Fairy Tail Hoshiboshi No Uta Lyra s Song lyrics english sub.mp3",
+            cover: "/Music/hoshi no uta.jpg"
         },
         {
             title: "Heart of Worship",
             artist: "Natasha Midori",
-            src: "./Music/Heart of Worship Natashia Midori Official lyric video.mp3",
-            cover: "./Music/heart of worship.jpg"
+            src: "/Music/Heart of Worship Natashia Midori Official lyric video.mp3",
+            cover: "/Music/heart of worship.jpg"
         },
         {
             title: "I Need You More",
             artist: "Natasha Midori",
-            src: "./Music/I Need You More Natashia Midori Official lyric video.mp3",
-            cover: "./Music/i need you more.jpg"
+            src: "/Music/I Need You More Natashia Midori Official lyric video.mp3",
+            cover: "/Music/i need you more.jpg"
         },
         {
             title: "Worthy Is The Lamb",
             artist: "Natasha Midori",
-            src: "./Music/Worthy Is The Lamb Natashia Midori Official lyric video.mp3",
-            cover: "./Music/worthy is the lamb.jpg"
+            src: "/Music/Worthy Is The Lamb Natashia Midori Official lyric video.mp3",
+            cover: "/Music/worthy is the lamb.jpg"
         },
         {
             title: "Mori no Chiisana Restaurant",
             artist: "Aoi Teshima",
-            src: "./Music/手嶌葵 森の小さなレストラン Official Audio.mp3",
-            cover: "./Music/mori choiisina restaurant.webp"
+            src: "/Music/手嶌葵 森の小さなレストラン Official Audio.mp3",
+            cover: "/Music/mori choiisina restaurant.webp"
         },
         {
             title: "Baby you",
             artist: "Yuka",
-            src: "./Music/有華 Baby you Music Video Yuka Ver.mp3",
-            cover: "./Music/baby you.jpg"
+            src: "/Music/有華 Baby you Music Video Yuka Ver.mp3",
+            cover: "/Music/baby you.jpg"
         }
     ];
 
