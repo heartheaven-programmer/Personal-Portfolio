@@ -488,7 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Above All",
             artist: "Natasha Midori",
-            src: "./Music/Above All Natashia Midori Official lyric video.mp3",
+            src: "/Music/Above All Natashia Midori Official lyric video.mp3",
             cover: "/Music/above all.webp"
         },
         {
