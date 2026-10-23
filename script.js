@@ -568,7 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (isPlaying) {
-            console.log(audioPlayer).play();
+            audioPlayer.play();
         }
     }
 
@@ -588,7 +588,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function playAudio() {
         isPlaying = true;
-        audioPlayer.play();
+        console.log(audioPlayer).play();
         playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
     }
 
