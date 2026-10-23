@@ -568,7 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (isPlaying) {
-            audioPlayer.play();
+            console.log(audioPlayer).play();
         }
     }
 
