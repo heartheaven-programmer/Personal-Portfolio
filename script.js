@@ -588,7 +588,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function playAudio() {
         isPlaying = true;
-        console.log(audioPlayer).play();
+        audioPlayer.play();
         playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
     }
 
